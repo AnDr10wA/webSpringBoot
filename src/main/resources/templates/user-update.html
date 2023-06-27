@@ -1,10 +1,25 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<meta charset="UTF-8">
-<title>Create user</title>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    table {
+      width: 300px;
+      margin: auto;
+      border-collapse: collapse;
+    }
+    td {
+      text-align: center;
+    }
+    .text-center {
+      text-align: center;
+    }
+  </style>
+  <title>Users</title>
 </head>
 <body>
-<form action="#" th:action="@{/user-update}" th:object="${user}" method="post">
+<h2 class="text-center">Update users</h2>
+<form action="#" th:action="@{/user-update}" th:object="${user}" method="post" class="text-center">
   <label for="id">ID</label>
   <input readonly type="number" th:field="*{id}" id="id" placeholder="ID">
   <br/>
