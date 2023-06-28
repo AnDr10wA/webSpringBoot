@@ -19,7 +19,7 @@
 </head>
 <body>
 <h2 class="text-center">Update users</h2>
-<form action="#" th:action="@{/user-update}" th:object="${user}" method="post" class="text-center">
+<form action="#" th:action="@{/users/update}" th:object="${user}" method="post" class="text-center">
   <label for="id">ID</label>
   <input readonly type="number" th:field="*{id}" id="id" placeholder="ID">
   <br/>

@@ -1,29 +1,31 @@
 package com.kata.webSpring.service;
 
-import com.kata.webSpring.dao.UserDao;
+import com.kata.webSpring.repository.UserRepository;
 import com.kata.webSpring.model.User;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
+@Transactional
 public class UserService {
-    private final UserDao userDao;
+    private final UserRepository userRepository;
     @Autowired
-    public UserService(UserDao userDao) {
-        this.userDao = userDao;
+    public UserService(UserRepository userRepository) {
+        this.userRepository = userRepository;
     }
 
     public User findById(Long id){
-        return userDao.getOne(id);
+        return userRepository.getOne(id);
     }
     public List<User> findAll(){
-        return userDao.findAll();
+        return userRepository.findAll();
     }
     public User saveUser(User user){
-        return userDao.save(user);
+        return userRepository.save(user);
     }
     public void deleteById(Long id){
-        userDao.deleteById(id);
+        userRepository.deleteById(id);
     }
 }

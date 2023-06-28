@@ -38,14 +38,14 @@
         <td th:text="${user.firstName}"></td>
         <td th:text="${user.lastName}"></td>
         <td th:text="${user.age}"></td>
-        <td><a th:href="@{user-update/{id}(id=${user.id})}">Edit</a></td>
-        <td><a th:href="@{user-delete/{id}(id=${user.id})}">Delete</a></td>
+        <td><a th:href="@{users/update/{id}(id=${user.id})}">Edit</a></td>
+        <td><a th:href="@{users/delete/{id}(id=${user.id})}">Delete</a></td>
       </tr>
       </tbody>
     </table>
   </div>
   <center>
-  <p><a href="/user-create">Create user</a></p>
+  <p><a href="/users/create">Create user</a></p>
     </center>
 </div>
 </body>
